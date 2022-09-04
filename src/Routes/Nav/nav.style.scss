@@ -2,8 +2,7 @@
 
 .navbar {
     position: relative;
-    padding: 8px 16px 8px 16px;
-    
+    padding: 16px 32px 16px 32px;
     h1{
         display: inline;
     }
@@ -19,24 +18,14 @@
     .navMenu {
         position: absolute;
         list-style-type: none;
-        right: 16px;
-        top: 0;
-        padding: 16px;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 32px;
 
         li {
-            padding: 8px 10px 8px 10px;
             display: inline;
+            margin-left: 25px;
         }
 
-    }
-}
-
-@media only screen and (min-width:500px) {
-    .navbar {
-        padding: 16px 50px 16px 50px;
-
-        .navMenu {
-            right: 50px;
-        }
     }
 }

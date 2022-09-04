@@ -1,9 +1,19 @@
 $primary: #2e77b4;
 $primaryDark: #12538a;
 $light: #e8f0f7;
-$secondary : #CA054D;
+$danger: #CA054D;
 
 @mixin fixWidth {
     max-width: 1000px;
     margin: 0 auto;
+}
+
+@keyframes PopOut{
+    from{
+        transform: translateY(-50%);
+    }
+    to{
+        transform: translateY(0px);
+
+    }
 }
