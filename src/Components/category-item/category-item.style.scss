@@ -11,8 +11,6 @@
     border-radius: 2px;
 
 
-
-
     & img {
         width: 100%;
         height: 200px;
@@ -24,6 +22,9 @@
 
     &:hover img {
         transform: scale(1.1);
+    }
+    &:hover .category-container-body{
+        opacity: 0.95;
     }
 
     .category-container-body {
