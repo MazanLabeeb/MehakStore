@@ -8,10 +8,10 @@ const Navigation = () => (
             <Link to="/"><h1><i className="fa fa-archive" aria-hidden="true"></i> MehakStore</h1></Link>
             <ul className="navMenu">
                 <li>
-                    <Link to={"/"} ><i className="fa fa-home" aria-hidden="true"></i> Home</Link>
+                    <Link to={"/shop"} ><i className="fa fa-shopping-bag" aria-hidden="true"></i> Shop</Link>
                 </li>
                 <li>
-                    <Link to={"/shop"} ><i className="fa fa-shopping-bag" aria-hidden="true"></i> Shop</Link>
+                    <Link to={"/sign-in"} ><i className="fa fa-sign-in" aria-hidden="true"></i> Sign In</Link>
                 </li>
             </ul>
         </nav>

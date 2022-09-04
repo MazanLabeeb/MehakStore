@@ -2,6 +2,7 @@ import { Route, Routes } from "react-router-dom";
 import PageNotFound from "./Components/PageNotFound/PageNotFound.component";
 import Home from "./Routes/Home/home.component";
 import Navigation from "./Routes/Nav/nav.component";
+import SignIn from "./Routes/Sign-In/sign-in.component";
 
 
 
@@ -11,6 +12,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Navigation />}>
           <Route index element={<Home />} />
+          <Route path="sign-in" element={<SignIn />} />
           <Route path="*" element={<PageNotFound />} />
         </Route>
       </Routes>
