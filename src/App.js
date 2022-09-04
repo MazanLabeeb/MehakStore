@@ -1,16 +1,9 @@
-import { Outlet, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
+import PageNotFound from "./Components/PageNotFound/PageNotFound.component";
 import Home from "./Routes/Home/home.component";
+import Navigation from "./Routes/Nav/nav.component";
 
-const Navigation = () => (
-  <div>
-    <div>
-      <h1>MehakStore</h1>
-    </div>
-    <Outlet />
-  </div>
-)
 
-const PageNotFound = () => (<div>Error 404! Page Not Found</div>);
 
 const App = () => {
   return (

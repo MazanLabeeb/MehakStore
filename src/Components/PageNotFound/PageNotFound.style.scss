@@ -1,0 +1,11 @@
+@import "./../../globals";
+.PageNotFound{
+    padding: 16px;
+    text-align: center;
+}
+.PageNotFound h1{
+    color: $secondary;
+}
+.PageNotFound p{
+    color: $primary;
+}

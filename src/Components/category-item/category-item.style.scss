@@ -23,13 +23,13 @@
     &:hover img {
         transform: scale(1.1);
     }
-    &:hover .category-container-body{
+
+    &:hover .category-container-body {
         opacity: 0.95;
     }
 
     .category-container-body {
         padding: 16px;
-        border: 1px solid black;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -40,15 +40,18 @@
         left: 50%;
         transform: translate(-50%, -50%);
         background-color: $light;
-        opacity: 0.75;
-        border-radius: 2px;
-        h2{
+        color: $secondary;
+
+        opacity: 0.8;
+        border-radius: 5px;
+
+        h2 {
             font-size: 22px;
             text-transform: uppercase;
         }
-        p{
+
+        p {
             font-size: 14px;
         }
     }
 }
-

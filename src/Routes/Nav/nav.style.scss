@@ -1,0 +1,42 @@
+@import "./../../globals";
+
+.navbar {
+    position: relative;
+    padding: 8px 16px 8px 16px;
+    
+    h1{
+        display: inline;
+    }
+    a {
+        text-decoration: none;
+        color: $primary;
+        font-size: 14px;
+        &:hover {
+            color: $primaryDark;
+        }
+    }
+
+    .navMenu {
+        position: absolute;
+        list-style-type: none;
+        right: 16px;
+        top: 0;
+        padding: 16px;
+
+        li {
+            padding: 8px 10px 8px 10px;
+            display: inline;
+        }
+
+    }
+}
+
+@media only screen and (min-width:500px) {
+    .navbar {
+        padding: 16px 50px 16px 50px;
+
+        .navMenu {
+            right: 50px;
+        }
+    }
+}

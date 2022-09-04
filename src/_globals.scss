@@ -1,5 +1,7 @@
-$primary: blue;
-$light: aliceblue;
+$primary: #2e77b4;
+$primaryDark: #12538a;
+$light: #e8f0f7;
+$secondary : #CA054D;
 
 @mixin fixWidth {
     max-width: 1000px;
