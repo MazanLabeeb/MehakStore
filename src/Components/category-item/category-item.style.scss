@@ -1,28 +1,5 @@
 @import "./../../globals";
 
-@mixin fixWidth {
-    max-width: 1000px;
-    margin: 0 auto;
-}
-
-
-* {
-    padding: 0;
-    margin: 0;
-}
-
-body {
-    background-color: $light
-}
-
-
-.categories-container {
-    @include fixWidth();
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-gap: 10px;
-    padding: 14px;
-}
 
 .category-container {
     border: 1px solid silver;

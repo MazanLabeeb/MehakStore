@@ -1,0 +1,9 @@
+@import "./../../globals";
+
+.categories-container {
+    @include fixWidth();
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 10px;
+    padding: 16px;
+}
