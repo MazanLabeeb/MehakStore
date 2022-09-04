@@ -1,11 +1,29 @@
 @import "./../../globals";
 .PageNotFound{
-    padding: 16px;
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     text-align: center;
 }
 .PageNotFound h1{
     color: $secondary;
+    font-size: 64px;
+    animation: PopOut 0.3s ease-in-out;
+
 }
 .PageNotFound p{
     color: $primary;
+    animation: PopOut 0.3s ease-in-out;
+
+}
+
+@keyframes PopOut{
+    from{
+        transform: translateY(-50%);
+    }
+    to{
+        transform: translateY(0px);
+
+    }
 }
