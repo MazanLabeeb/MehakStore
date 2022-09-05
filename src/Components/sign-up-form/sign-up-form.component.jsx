@@ -4,6 +4,7 @@ import "./sign-up-form.style.scss";
 import { createAuthUserWithEmailAndPassword, createUserDocumentFromAuth } from "../../utils/firebase/firebase.utils";
 import FormInput from "../form-input/form-input.component";
 
+
 const defaultFormFields = {
     displayName: "",
     email: "",
