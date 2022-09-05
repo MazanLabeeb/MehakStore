@@ -1,0 +1,19 @@
+@import "./../../globals";
+.inputField{
+    padding: 8px 16px 8px 16px;
+    margin-bottom: 16px;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid silver;
+    outline: none;
+    
+    &:focus, &:hover{
+        border-bottom: 1px solid $primary;
+    }
+}
+label{
+    cursor: pointer;
+    &:hover{
+        color: $primary
+    }
+}
