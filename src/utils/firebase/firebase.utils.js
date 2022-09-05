@@ -1,6 +1,6 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import {getAuth, signInWithPopup,GoogleAuthProvider, signInWithRedirect} from "firebase/auth";
+import {getAuth, signInWithPopup,GoogleAuthProvider, signInWithRedirect, createUserWithEmailAndPassword} from "firebase/auth";
 
 import {getFirestore, doc, getDoc, setDoc} from 'firebase/firestore';
 
@@ -53,4 +53,8 @@ export const createUserDocumentFromAuth = async (userAuth) => {
     }
   }
 
+}
+
+export const createAuthUserWithEmailAndPassword = async () => {
+  
 }
