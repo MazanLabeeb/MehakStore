@@ -56,5 +56,5 @@ export const createUserDocumentFromAuth = async (userAuth) => {
 }
 
 export const createAuthUserWithEmailAndPassword = async () => {
-  
+  createUserWithEmailAndPassword(auth, email, password);
 }
