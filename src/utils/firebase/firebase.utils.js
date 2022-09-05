@@ -1,6 +1,6 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import {getAuth, signInWithPopup,GoogleAuthProvider} from "firebase/auth";
+import {getAuth, signInWithPopup,GoogleAuthProvider, signInWithRedirect} from "firebase/auth";
 
 import {getFirestore, doc, getDoc, setDoc} from 'firebase/firestore';
 
@@ -18,15 +18,16 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-const provider = new GoogleAuthProvider();
-provider.setCustomParameters({
+const googleProvider = new GoogleAuthProvider();
+googleProvider.setCustomParameters({
     prompt: "select_account"
 })
 
 const firebaseApp = initializeApp(firebaseConfig);
 
 const auth = getAuth();
-export const signInWithGooglePopup = () => signInWithPopup(auth, provider);
+export const signInWithGooglePopup = () => signInWithPopup(auth, googleProvider);
+export const signInWithGoogleRedirect = () => signInWithRedirect(auth, googleProvider);
 
 
 // Lesson 76 
@@ -46,6 +47,7 @@ export const createUserDocumentFromAuth = async (userAuth) => {
         email, 
         createdAt
       })
+      console.log("User created");
     }catch(error){
       console.log("An error occured while creating the user", error.message);
     }
