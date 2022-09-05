@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./sign-up-form.style.scss";
 
 import { createAuthUserWithEmailAndPassword, createUserDocumentFromAuth } from "../../utils/firebase/firebase.utils";
+import FormInput from "../form-input/form-input.component";
 
 const defaultFormFields = {
     displayName: "", 
@@ -13,12 +14,12 @@ const defaultFormFields = {
 const SignUpForm = () =>{
     const [formFields, setFormFields] = useState(defaultFormFields);
     const {displayName , email, password, password2} = formFields;
-    console.log(formFields);
+    // console.log(formFields);
 
     const formHandler = (event) => {
         setFormFields({
             ...formFields,
-            [event.target.id]: event.target.value
+            [event.target.name]: event.target.value
         })
     }
 
@@ -55,17 +56,10 @@ const SignUpForm = () =>{
         <div className="signup-form">
             <h3>Sign Up With Your Email and Password</h3>
             <form onSubmit={submitHandler}>
-                <label htmlFor="displayName">Display Name</label>
-                <input type="text" id="displayName" onChange={formHandler} value = {displayName} required />
-
-                <label htmlFor="email">Email</label>
-                <input type="email" id="email" onChange={formHandler} value = {email} required />
-
-                <label htmlFor="password">Password</label>
-                <input type="password" id="password" onChange={formHandler} value = {password} required />
-
-                <label htmlFor="password2">Repeat Password</label>
-                <input type="password" id="password2" onChange={formHandler} value = {password2} required />
+                <FormInput type = {"text"} label={"Display Name"}   onChange={formHandler} value={displayName} name={"displayName"} />
+                <FormInput type = {"email"} label={"Email"}   onChange={formHandler} value={email} name={"email"} />
+                <FormInput type = {"password"} label={"password"}  onChange={formHandler} value={password} name={"password"} />
+                <FormInput type = {"password"} label={"password2"}   onChange={formHandler} value={password2} name={"password2"} />
 
                 <button type="submit">Sign Up</button>
             </form>
