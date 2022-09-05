@@ -1,6 +1,8 @@
 import { useState } from "react";
 import "./sign-up-form.style.scss";
 
+import { createAuthUserWithEmailAndPassword } from "../../utils/firebase/firebase.utils";
+
 const defaultFormFields = {
     displayName: "", 
     email: "", 
@@ -20,10 +22,14 @@ const SignUpForm = () =>{
         })
     }
 
+    const submitHandler = async (event) => {
+        event.preventDefault();
+    }
+
     return (
         <div className="signup-form">
             <h3>Sign Up With Your Email and Password</h3>
-            <form onSubmit={() => { console.log("ok hai") } }>
+            <form onSubmit={submitHandler}>
                 <label htmlFor="displayName">Display Name</label>
                 <input type="text" id="displayName" onChange={formHandler} value = {displayName} required />
 
