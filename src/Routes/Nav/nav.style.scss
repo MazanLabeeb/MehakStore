@@ -1,12 +1,15 @@
 @import "./../../globals";
 
 .navbar {
-    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+
     padding: 16px 32px 16px 32px;
-    h1{
-        display: inline;
-    }
+
     a {
+        margin-right: auto;
         text-decoration: none;
         color: $primary;
         font-size: 14px;
@@ -16,14 +19,11 @@
     }
 
     .navMenu {
-        position: absolute;
         list-style-type: none;
-        top: 50%;
-        transform: translateY(-50%);
-        right: 32px;
 
         li {
-            display: inline;
+            display: inline-block;
+
             margin-left: 25px;
         }
 
