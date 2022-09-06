@@ -3,6 +3,7 @@ import "./sign-up-form.style.scss";
 
 import { createAuthUserWithEmailAndPassword, createUserDocumentFromAuth } from "../../utils/firebase/firebase.utils";
 import FormInput from "../form-input/form-input.component";
+import Button from "../button/button.component";
 
 
 const defaultFormFields = {
@@ -60,7 +61,7 @@ const SignUpForm = () => {
             submit.disabled = false;
 
         }
-    }
+   <i class="fa fa-google" aria-hidden="true"></i> }
 
     return (
         <div className="signup-form">
@@ -70,9 +71,10 @@ const SignUpForm = () => {
                 <FormInput type={"email"} label={"Email"} onChange={formHandler} value={email} name={"email"} id={"email"} autoComplete="off" required={true} />
                 <FormInput type={"password"} label={"Password"} onChange={formHandler} value={password} name={"password"} id={"password"} autoComplete="off" required={true} />
                 <FormInput type={"password"} label={"Repeat Password"} onChange={formHandler} value={password2} name={"password2"} id={"password2"} autoComplete="off" required={true} />
-
-                <button id="submit" type="submit">Sign Up</button>
+                {/* <button id="submit" type="submit">Sign Up</button> */}
             </form>
+            <Button  type={"submit"} id={"submit"} className={"btn btn-primary btn-large btn-max-width"}><i className="fa fa-user-plus" aria-hidden="true"></i> Sign Up</Button>
+
         </div>
     )
 }

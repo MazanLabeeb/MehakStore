@@ -1,0 +1,54 @@
+@import "../../globals";
+
+.btn{
+    padding: 7px 14px;
+    border: none;
+    border-radius: 3px;
+    color: white;
+
+}
+.btn-max-width{
+    width: 100%;
+}
+.btn-large{
+    padding: 10px 20px;
+    font-size: 16px;
+}
+.btn-primary{
+    background-color: $primary;
+    background-image: linear-gradient(to top, $primary, $primaryDark);
+}
+.btn-primary:hover{
+    background-color: $primaryDark;
+    background-image: linear-gradient(to top, $primaryDark, $primaryDark);
+
+}
+.btn-primary:focus{
+    outline: 3px solid $primaryLight;
+}
+
+
+.btn-secondary{
+    background-color: $secondary;
+    background-image: linear-gradient(to top, $secondary, $secondaryDark);
+}
+.btn-secondary:hover{
+    background-color: $primaryDark;
+    background-image: linear-gradient(to top, $secondaryDark, $secondaryDark);
+
+
+}
+.btn-secondary:focus{
+    outline: 3px solid $secondaryLight;
+}
+
+
+
+.btn-google{
+    background-color: #4285F4;
+   
+}
+.btn-google:hover{
+    background-color: $primaryDark;
+
+}
