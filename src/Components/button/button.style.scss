@@ -1,66 +1,91 @@
 @import "../../globals";
 
-.btn-group{
+.btn-group {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
-    & button:first-child{
+
+    & button:first-child {
         margin-left: 0 !important;
     }
-    & button{
-        margin-left: 5px;
+
+    & button {
+        margin-bottom: 10px;
+
+
     }
 }
 
-.btn{
+@media only screen and (min-width: 500px) {
+    .btn-group {
+        flex-direction: row;
+
+        & button {
+            margin-left: 5px;
+
+        }
+    }
+
+
+}
+
+.btn {
     padding: 7px 14px;
     border: none;
     border-radius: 3px;
     color: white;
 
 }
-.btn-max-width{
+
+.btn-max-width {
     width: 100%;
 }
-.btn-large{
+
+.btn-large {
     padding: 10px 20px;
     font-size: 16px;
 }
-.btn-primary{
+
+.btn-primary {
     background-color: $primary;
     background-image: linear-gradient(to top, $primary, $primaryDark);
 }
-.btn-primary:hover{
+
+.btn-primary:hover {
     background-color: $primaryDark;
     background-image: linear-gradient(to top, $primaryDark, $primaryDark);
 
 }
-.btn-primary:focus{
+
+.btn-primary:focus {
     outline: 3px solid $primaryLight;
 }
 
 
-.btn-secondary{
+.btn-secondary {
     background-color: $secondary;
     background-image: linear-gradient(to top, $secondary, $secondaryDark);
 }
-.btn-secondary:hover{
+
+.btn-secondary:hover {
     background-color: $primaryDark;
     background-image: linear-gradient(to top, $secondaryDark, $secondaryDark);
 
 
 }
-.btn-secondary:focus{
+
+.btn-secondary:focus {
     outline: 3px solid $secondaryLight;
 }
 
 
 
-.btn-google{
+.btn-google {
     background-color: #4285F4;
-   
+
 }
-.btn-google:hover{
+
+.btn-google:hover {
     background-color: $primaryDark;
 
 }

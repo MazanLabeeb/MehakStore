@@ -63,10 +63,10 @@ const SignInForm = () => {
         <div className="signIn-form">
             <h3>Already have an account?</h3>
             <p>Sign In With Your Email and Password</p>
-
+            <br />
             <form onSubmit={submitHandler}>
-                <FormInput type={"email"} label={"Email"} onChange={formHandler} value={email} name={"email"} id={"email"} required={true} />
-                <FormInput type={"password"} label={"Password"} onChange={formHandler} value={password} name={"password"} id={"password"} required={true} />
+                <FormInput type={"email"} label={"Email"} onChange={formHandler} value={email} name={"email"} id={"emailSignIn"} required={true} />
+                <FormInput type={"password"} label={"Password"} onChange={formHandler} value={password} name={"password"} id={"passwordSignIn"} required={true} />
                 <div className={"btn-group"}>
                     <Button type={"submit"} id={"login"} className={"btn btn-secondary btn-large btn-max-width"}><i className="fa fa-sign-in" aria-hidden="true"></i> Sign In</Button>
                     <Button type={"button"} onClick={signInWithGoogle} className={"btn btn-google btn-large btn-max-width"}><i className="fa fa-google" aria-hidden="true"></i> Sign In With Google</Button>

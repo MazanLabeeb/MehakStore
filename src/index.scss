@@ -17,3 +17,8 @@ body {
 img {
   pointer-events: none;
 }
+
+.body-max-width{
+  margin: 0 auto;
+  max-width: 1000px;
+}

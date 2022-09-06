@@ -68,10 +68,10 @@ const SignUpForm = () => {
             <h3>Don't have an account?</h3>
             <p>Sign Up now with your Email and Password</p>
             <form onSubmit={submitHandler}>
-                <FormInput type={"text"} label={"Display Name"} onChange={formHandler} value={displayName} name={"displayName"}  autoComplete="off" required={true} />
-                <FormInput type={"email"} label={"Email"} onChange={formHandler} value={email} name={"email"}  autoComplete="off" required={true} />
-                <FormInput type={"password"} label={"Password"} onChange={formHandler} value={password} name={"password"} autoComplete="off" required={true} />
-                <FormInput type={"password"} label={"Repeat Password"} onChange={formHandler} value={password2} name={"password2"} autoComplete="off" required={true} />
+                <FormInput type={"text"} label={"Display Name"} id={"displayName"} onChange={formHandler} value={displayName} name={"displayName"}  autoComplete="off" required={true} />
+                <FormInput type={"email"} label={"Email"} id={"email"} onChange={formHandler} value={email} name={"email"}  autoComplete="off" required={true} />
+                <FormInput type={"password"} label={"Password"} id={"password"} onChange={formHandler} value={password} name={"password"} autoComplete="off" required={true} />
+                <FormInput type={"password"} label={"Repeat Password"} id={"password2"} onChange={formHandler} value={password2} name={"password2"} autoComplete="off" required={true} />
                 {/* <button id="submit" type="submit">Sign Up</button> */}
             <Button  type={"submit"} id={"submit"} className={"btn btn-primary btn-large btn-max-width"}><i className="fa fa-user-plus" aria-hidden="true"></i> Sign Up</Button>
 

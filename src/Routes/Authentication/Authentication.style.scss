@@ -1,0 +1,20 @@
+.auth-container {
+    display: flex;
+    flex-direction: column;
+
+    &>div {
+        width: 100%;
+        padding: 16px;
+    }
+
+    &>div:first-child {
+        margin-right: 16px;
+    }
+}
+
+@media only screen and (min-width: 700px) {
+    .auth-container {
+        flex-direction: row;
+
+    }
+}

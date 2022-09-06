@@ -5,7 +5,7 @@ import "./nav.style.scss";
 const Navigation = () => (
     <Fragment>
         <header className="navbar">
-            <Link to="/"><h1><i className="fa fa-archive" aria-hidden="true"></i> MehakStore</h1></Link>
+            <Link to="/"><h1><i className="fa fa-archive" aria-hidden="true"></i> </h1></Link>
             <nav>
                 <ul className="navMenu">
                     <li>
