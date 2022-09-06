@@ -1,5 +1,17 @@
 @import "../../globals";
 
+.btn-group{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    & button:first-child{
+        margin-left: 0 !important;
+    }
+    & button{
+        margin-left: 5px;
+    }
+}
+
 .btn{
     padding: 7px 14px;
     border: none;

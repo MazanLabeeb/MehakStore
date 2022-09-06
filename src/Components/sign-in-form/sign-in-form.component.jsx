@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./sign-in-form.style.scss";
 
-import { signInAuthUserWithEmailAndPassword,createAuthUserWithEmailAndPassword, createUserDocumentFromAuth, signInWithGooglePopup } from "../../utils/firebase/firebase.utils";
+import { signInAuthUserWithEmailAndPassword, createAuthUserWithEmailAndPassword, createUserDocumentFromAuth, signInWithGooglePopup } from "../../utils/firebase/firebase.utils";
 import FormInput from "../form-input/form-input.component";
 import Button from "../button/button.component";
 
@@ -27,7 +27,7 @@ const SignInForm = () => {
         setFormFields(defaultFormFields);
     }
     const signInWithGoogle = async () => {
-        const {user} = await signInWithGooglePopup();
+        const { user } = await signInWithGooglePopup();
         createUserDocumentFromAuth(user);
     };
 
@@ -38,26 +38,40 @@ const SignInForm = () => {
         try {
             const response = await signInAuthUserWithEmailAndPassword(email, password);
             console.log(response);
+            alert("Login Success!");
 
             resetFormFields();
         } catch (e) {
+            console.log(e.code);
+            switch (e.code) {
+                case "auth/wrong-password":
+                    alert("You have entered an incorrect password.");
+                    break
+                case "auth/user-not-found":
+                    alert("No user has been registered with this email.");
+                    break
+                default:
+                    console.log(e);
+
+            }
 
 
         }
-        <i class="fa fa-google" aria-hidden="true"></i>
     }
 
-    return ( 
+    return (
         <div className="signIn-form">
             <h3>Already have an account?</h3>
             <p>Sign In With Your Email and Password</p>
 
             <form onSubmit={submitHandler}>
-                <FormInput type={"email"} label={"Email"} onChange={formHandler} value={email} name={"email"} id={"email"}  required={true} />
-                <FormInput type={"password"} label={"Password"} onChange={formHandler} value={password} name={"password"} id={"password"}  required={true} />
+                <FormInput type={"email"} label={"Email"} onChange={formHandler} value={email} name={"email"} id={"email"} required={true} />
+                <FormInput type={"password"} label={"Password"} onChange={formHandler} value={password} name={"password"} id={"password"} required={true} />
+                <div className={"btn-group"}>
+                    <Button type={"submit"} id={"login"} className={"btn btn-secondary btn-large btn-max-width"}><i className="fa fa-sign-in" aria-hidden="true"></i> Sign In</Button>
+                    <Button type={"button"} onClick={signInWithGoogle} className={"btn btn-google btn-large btn-max-width"}><i className="fa fa-google" aria-hidden="true"></i> Sign In With Google</Button>
+                </div>
 
-                <Button type={"submit"} id={"login"} className={"btn btn-secondary btn-large btn-max-width"}><i className="fa fa-user-plus" aria-hidden="true"></i> Sign In</Button>
-                <Button type={"button"}  onClick={signInWithGoogle} className={"btn btn-google btn-large btn-max-width"}><i className="fa fa-google" aria-hidden="true"></i> Sign In</Button>
             </form>
 
         </div>
