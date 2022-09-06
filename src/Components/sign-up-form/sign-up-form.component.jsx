@@ -65,15 +65,17 @@ const SignUpForm = () => {
 
     return (
         <div className="signup-form">
-            <h3>Sign Up With Your Email and Password</h3>
+            <h3>Don't have an account?</h3>
+            <p>Sign Up now with your Email and Password</p>
             <form onSubmit={submitHandler}>
-                <FormInput type={"text"} label={"Display Name"} onChange={formHandler} value={displayName} name={"displayName"} id={"displayName"} autoComplete="off" required={true} />
-                <FormInput type={"email"} label={"Email"} onChange={formHandler} value={email} name={"email"} id={"email"} autoComplete="off" required={true} />
-                <FormInput type={"password"} label={"Password"} onChange={formHandler} value={password} name={"password"} id={"password"} autoComplete="off" required={true} />
-                <FormInput type={"password"} label={"Repeat Password"} onChange={formHandler} value={password2} name={"password2"} id={"password2"} autoComplete="off" required={true} />
+                <FormInput type={"text"} label={"Display Name"} onChange={formHandler} value={displayName} name={"displayName"}  autoComplete="off" required={true} />
+                <FormInput type={"email"} label={"Email"} onChange={formHandler} value={email} name={"email"}  autoComplete="off" required={true} />
+                <FormInput type={"password"} label={"Password"} onChange={formHandler} value={password} name={"password"} autoComplete="off" required={true} />
+                <FormInput type={"password"} label={"Repeat Password"} onChange={formHandler} value={password2} name={"password2"} autoComplete="off" required={true} />
                 {/* <button id="submit" type="submit">Sign Up</button> */}
-            </form>
             <Button  type={"submit"} id={"submit"} className={"btn btn-primary btn-large btn-max-width"}><i className="fa fa-user-plus" aria-hidden="true"></i> Sign Up</Button>
+
+            </form>
 
         </div>
     )

@@ -12,7 +12,7 @@ const Navigation = () => (
                         <Link to={"/shop"} ><i className="fa fa-shopping-bag" aria-hidden="true"></i> Shop</Link>
                     </li>
                     <li>
-                        <Link to={"/sign-in"} ><i className="fa fa-sign-in" aria-hidden="true"></i> Sign In</Link>
+                        <Link to={"/auth"} ><i className="fa fa-sign-in" aria-hidden="true"></i> Sign In</Link>
                     </li>
                 </ul>
             </nav>
