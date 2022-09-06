@@ -6,7 +6,6 @@ import FormInput from "../form-input/form-input.component";
 import Button from "../button/button.component";
 import { UserContext } from "../../Context/user.context";
 
-
 const defaultFormFields = {
     email: "",
     password: ""
