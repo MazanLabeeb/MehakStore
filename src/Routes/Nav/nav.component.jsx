@@ -15,9 +15,15 @@ const Navigation = () => {
                         <li>
                             <Link to={"/shop"} ><i className="fa fa-shopping-bag" aria-hidden="true"></i> Shop</Link>
                         </li>
-                        <li>
+                        {(currentUser)?
+                        (<li>
+                            <Link to={"/sign-out"} ><i className="fa fa-sign-out" aria-hidden="true"></i> Sign Out</Link>
+                        </li>)
+                        :
+                        (<li>
                             <Link to={"/auth"} ><i className="fa fa-sign-in" aria-hidden="true"></i> Sign In</Link>
-                        </li>
+                        </li>)
+                        }
                     </ul>
                 </nav>
             </header>
