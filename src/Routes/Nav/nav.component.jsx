@@ -1,10 +1,20 @@
 import { Fragment, useContext } from "react";
 import { Link, Outlet } from "react-router-dom";
 import { UserContext } from "../../Context/user.context";
+import { signOutUser } from "../../utils/firebase/firebase.utils";
 import "./nav.style.scss";
 
+
+
 const Navigation = () => {
-    const { currentUser } = useContext(UserContext);
+    const { currentUser, setCurrentUser } = useContext(UserContext);
+
+    const signOutHandler = async () => {
+         await signOutUser();
+        setCurrentUser(null);
+    }
+
+    
     console.log(currentUser);
     return (
         <Fragment>
@@ -17,7 +27,7 @@ const Navigation = () => {
                         </li>
                         {(currentUser)?
                         (<li>
-                            <Link to={"/sign-out"} ><i className="fa fa-sign-out" aria-hidden="true"></i> Sign Out</Link>
+                            <a href="#" onClick={signOutHandler}><i className="fa fa-sign-out" aria-hidden="true" ></i> Sign Out </a>
                         </li>)
                         :
                         (<li>
