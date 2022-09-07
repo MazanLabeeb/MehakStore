@@ -6,15 +6,10 @@ import "./nav.style.scss";
 
 
 const Navigation = () => {
-    const { currentUser, setCurrentUser } = useContext(UserContext);
-
-    const signOutHandler = async () => {
-         await signOutUser();
-        setCurrentUser(null);
-    }
+    const { currentUser } = useContext(UserContext);
 
     
-    console.log(currentUser);
+
     return (
         <Fragment>
             <header className="navbar">
@@ -26,7 +21,7 @@ const Navigation = () => {
                         </li>
                         {(currentUser)?
                         (<li>
-                            <a href="#" onClick={signOutHandler}><i className="fa fa-sign-out" aria-hidden="true" ></i> Sign Out </a>
+                            <a href="#" onClick={signOutUser}><i className="fa fa-sign-out" aria-hidden="true" ></i> Sign Out </a>
                         </li>)
                         :
                         (<li>

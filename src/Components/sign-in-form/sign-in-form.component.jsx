@@ -13,9 +13,6 @@ const defaultFormFields = {
 const SignInForm = () => {
     const [formFields, setFormFields] = useState(defaultFormFields);
     const { email, password } = formFields;
-    // console.log(formFields);
-
-
 
     const formHandler = (event) => {
         setFormFields({
@@ -28,8 +25,7 @@ const SignInForm = () => {
         setFormFields(defaultFormFields);
     }
     const signInWithGoogle = async () => {
-        const { user } = await signInWithGooglePopup();
-        createUserDocumentFromAuth(user);
+        await signInWithGooglePopup();
     };
 
     const submitHandler = async (event) => {
