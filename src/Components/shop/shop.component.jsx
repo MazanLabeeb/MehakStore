@@ -2,9 +2,9 @@ import SHOP_DATA from "../../shop-data.json";
 
 const Shop = () => {
     return (
-        SHOP_DATA.map(({name}) => {
+        SHOP_DATA.map(({id, name}) => {
             return (
-                <div>{name}</div>
+                <div key={id}>{name}</div>
             );
         } )
     );
