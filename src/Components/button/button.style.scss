@@ -51,11 +51,12 @@
     background-image: linear-gradient(to top, $primary, $primaryDark);
 }
 
-.btn-primary:hover {
+.btn-primary:hover,.btn-primary:disabled{
     background-color: $primaryDark;
     background-image: linear-gradient(to top, $primaryDark, $primaryDark);
 
 }
+
 
 .btn-primary:focus {
     outline: 3px solid $primaryLight;
