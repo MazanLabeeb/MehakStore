@@ -1,0 +1,23 @@
+.cart-dropdown {
+    position: absolute;
+    border: 1px solid silver;
+    padding: 16px;
+    border-radius: 2px;
+    right: 30px;
+    top: 55px;
+    height: 300px;
+    z-index: 100;
+    background-color: white;
+    width: 250px;
+    box-shadow: 0px 0px 4px silver;
+
+    &:hover{
+    }
+
+    .cart-dropdown-body {
+        height: 250px;
+        overflow-y: auto;
+
+
+    }
+}
