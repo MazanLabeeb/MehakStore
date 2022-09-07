@@ -30,11 +30,10 @@ const Navigation = () => {
                             <Link to={"/auth"} ><i className="fa fa-sign-in" aria-hidden="true"></i> Sign In</Link>
                         </li>)
                         }
-                        <li>
-                            <Link to={"/cart"}><Cart /></Link>
+                        <li className="non-link">
+                            <Cart />
                         </li>
                     </ul>
-                    <CartDropDown />
                 </nav>
             </header>
             <Outlet />

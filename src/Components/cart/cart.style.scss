@@ -19,3 +19,11 @@
     }
 
 }
+
+#toggle-cart-dropdown{
+    display: none;
+}
+
+#toggle-cart-dropdown:checked ~ .cart-dropdown{
+    display: block;
+}

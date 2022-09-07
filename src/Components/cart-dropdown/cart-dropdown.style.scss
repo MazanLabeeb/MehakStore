@@ -1,7 +1,9 @@
 .cart-dropdown {
+    display: none;
     position: absolute;
     border: 1px solid silver;
     padding: 16px;
+    cursor: default;
     border-radius: 2px;
     right: 30px;
     top: 55px;

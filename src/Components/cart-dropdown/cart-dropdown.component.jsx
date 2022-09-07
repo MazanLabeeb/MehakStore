@@ -7,9 +7,10 @@ const CartDropDown = () => {
         <div className="cart-dropdown">
             <div className="cart-dropdown-body">
                 Your Cart is empty.
+
             </div>
             <Button className="btn btn-primary btn-max-width">Checkout</Button>
-            
+        
         </div>
     )
 }
