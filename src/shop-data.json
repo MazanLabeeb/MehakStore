@@ -1,9 +1,9 @@
 [
     {
       "id": 1,
-      "name": "Brown Brim",
-      "imageUrl": "https://i.ibb.co/ZYW3VTp/brown-brim.png",
-      "price": 25
+      "name": "Red Beanie",
+      "imageUrl": "https://i.ibb.co/bLB646Z/red-beanie.png",
+      "price": 18
     },
     {
       "id": 2,
@@ -37,9 +37,9 @@
     },
     {
       "id": 7,
-      "name": "Red Beanie",
-      "imageUrl": "https://i.ibb.co/bLB646Z/red-beanie.png",
-      "price": 18
+      "name": "Brown Brim",
+      "imageUrl": "https://i.ibb.co/ZYW3VTp/brown-brim.png",
+      "price": 25
     },
     {
       "id": 8,
