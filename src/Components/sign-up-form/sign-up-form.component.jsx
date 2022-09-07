@@ -69,6 +69,7 @@ const SignUpForm = () => {
         <div className="signup-form">
             <h3>Don't have an account?</h3>
             <p>Sign Up now with your Email and Password</p>
+            <br />
             <form onSubmit={submitHandler}>
                 <FormInput type={"text"} label={"Display Name"} id={"displayName"} onChange={formHandler} value={displayName} name={"displayName"}  autoComplete="off" required={true} />
                 <FormInput type={"email"} label={"Email"} id={"email"} onChange={formHandler} value={email} name={"email"}  autoComplete="off" required={true} />

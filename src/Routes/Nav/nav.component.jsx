@@ -1,5 +1,6 @@
 import { Fragment, useContext } from "react";
 import { Link, Outlet } from "react-router-dom";
+import Cart from "../../Components/cart/cart.component";
 import { UserContext } from "../../Context/user.context";
 import { signOutUser } from "../../utils/firebase/firebase.utils";
 import "./nav.style.scss";
@@ -28,6 +29,9 @@ const Navigation = () => {
                             <Link to={"/auth"} ><i className="fa fa-sign-in" aria-hidden="true"></i> Sign In</Link>
                         </li>)
                         }
+                        <li>
+                            <Link to={"/cart"}><Cart /></Link>
+                        </li>
                     </ul>
                 </nav>
             </header>

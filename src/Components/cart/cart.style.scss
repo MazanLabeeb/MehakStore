@@ -1,0 +1,21 @@
+@import "../../globals";
+
+.cart-icon-container{
+    cursor: pointer;
+    position: relative;
+    .cart-icon{
+        font-size: 18px;
+    }
+    span{
+        position: absolute;
+        top:-8px;
+        right: -8px;
+        font-size: 10px;
+        opacity: 0.8;
+        border-radius: 2px;
+        color: white;
+        padding: 1px 5px;
+        background-color: $secondary;
+    }
+
+}
