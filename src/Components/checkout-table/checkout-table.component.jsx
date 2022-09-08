@@ -3,10 +3,12 @@ import { CartContext } from "../../Context/cart.context";
 import "./checkout-table.style.scss";
 
 const CheckoutTable = () => {
-    const { cartItems } = useContext(CartContext);
+    const { cartItems, removeItemFromCart } = useContext(CartContext);
     const totalPrice = cartItems.reduce((total, cartItem)=>{
         return total + cartItem.quantity*cartItem.price;
     },0);
+
+
     return (
         <div>
             <table className="checkout-table" >
@@ -29,7 +31,7 @@ const CheckoutTable = () => {
                                     <td>{name}</td>
                                     <td>{quantity}</td>
                                     <td>{price}</td>
-                                    <td><i className="fa fa-times" aria-hidden="true"></i></td>
+                                    <td><i className="fa fa-times remove" aria-hidden="true" onClick={()=>{removeItemFromCart(id)}} ></i></td>
                                 </tr>
                             )
                         })

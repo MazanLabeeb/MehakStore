@@ -20,6 +20,7 @@ const addItemsToCartHelper = ( cartItems, newCartItem ) => {
 }
 
 
+
 export const CartProvider = ({children}) => {
     const [cartItems, setCartItems] = useState([]);
 
@@ -27,8 +28,13 @@ export const CartProvider = ({children}) => {
         setCartItems( addItemsToCartHelper(cartItems, newCartItem) );
     }
 
+    const removeItemFromCart = (id) => {
+        setCartItems(cartItems.filter(cartItem=>cartItem.id != id));
+
+    }
+
     
-    const value = {cartItems , setCartItems, addItemsToCart};
+    const value = {cartItems , setCartItems, addItemsToCart,removeItemFromCart};
 
    
 
