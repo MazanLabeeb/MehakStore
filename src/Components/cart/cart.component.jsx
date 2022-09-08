@@ -1,16 +1,17 @@
 
-import { Fragment, useContext } from "react";
+import { Fragment, useContext, useEffect } from "react";
 import { CartContext } from "../../Context/cart.context";
 import CartDropDown from "../cart-dropdown/cart-dropdown.component";
 import "./cart.style.scss";
 
 const Cart = () => {
+    //  optimal way to count items in an array
+    const { cartItems } = useContext(CartContext);
+    let count = cartItems.reduce((total, item) => {
+        return total + item.quantity;
+    }, 0);
 
-    const {cartItems} = useContext( CartContext );
-    var count = 0;
-    cartItems.forEach(row => {
-        count += row.quantity;
-    });
+
 
     return (
         <Fragment>
@@ -20,7 +21,7 @@ const Cart = () => {
                     <span>{count}</span>
                 </div>
             </label>
-            <input type="checkbox"  id="toggle-cart-dropdown" />
+            <input type="checkbox" id="toggle-cart-dropdown" />
             <CartDropDown />
         </Fragment>
 

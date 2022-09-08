@@ -1,10 +1,9 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 
 
 export const CartContext = createContext([]);
 
 const addItemsToCartHelper = ( cartItems, newCartItem ) => {
-
     const newCartItemAlreadyExists = cartItems.find( row =>  row.id === newCartItem.id );
 
     if(newCartItemAlreadyExists){
@@ -23,8 +22,6 @@ const addItemsToCartHelper = ( cartItems, newCartItem ) => {
 
 export const CartProvider = ({children}) => {
     const [cartItems, setCartItems] = useState([]);
-
-
 
     const addItemsToCart = ( newCartItem ) => {
         setCartItems( addItemsToCartHelper(cartItems, newCartItem) );
