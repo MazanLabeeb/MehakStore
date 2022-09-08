@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 const CartDropDown = () => {
 
-    const { cartItems } = useContext(CartContext);
+    const { cartItems  } = useContext(CartContext);
 
     const hideCartDropDown = () => {
         document.getElementById("toggle-cart-dropdown").checked = false;

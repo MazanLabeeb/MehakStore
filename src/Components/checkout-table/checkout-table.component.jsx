@@ -29,7 +29,7 @@ const CheckoutTable = () => {
                                 <tr key={id}>
                                     <td><img src={imageUrl} width="50" height="50" alt="Product" /></td>
                                     <td>{name}</td>
-                                    <td>
+                                    <td className="disable-selection">
                                         <i className="fa fa-chevron-left increment" aria-hidden="true" onClick={() => { decrementItemFromCart(id) }} ></i>
                                         &nbsp;{quantity}&nbsp;
                                         <i className="fa fa-chevron-right decrement" aria-hidden="true" onClick={() => { incrementItemFromCart(id) }} ></i>

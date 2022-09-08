@@ -1,7 +1,7 @@
 @import "../../globals";
 
 .product-card-container{
-    border-radius: 5px;
+    border-radius: 10px;
     overflow: hidden;
     position: relative;
 
@@ -26,7 +26,24 @@
         bottom: 4px;
         transform: translateX(-50%);
         font-size: 12px;
+
+        color: $secondary;
+        font-weight: bold;
+        background-color: white;
+        border: 1px solid $secondary;
+        border-top: none;
+        border-radius: 0px 0px 4px 4px;
+        opacity: 0.9;
+        &:hover{
+            color: white;
+            background-color: $secondary;
+            opacity: 0.9;
+        }
+        &:active{
+            opacity: 1;
+        }
     }
+
 
     .body{
         position: absolute;

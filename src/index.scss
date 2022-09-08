@@ -17,6 +17,10 @@ body {
 img {
   pointer-events: none;
 }
+.disable-selection{
+
+  user-select: none;
+}
 
 .body-max-width{
   margin: 0 auto;

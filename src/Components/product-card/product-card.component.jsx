@@ -14,7 +14,7 @@ const ProductCard = ({product}) => {
     return (
         <div className="product-card-container">
             <img src={imageUrl} alt={`Product ${name}`} />
-            <Button className="btn btn-secondary btn-large addCart" onClick={addToCart}>Add to Cart</Button>
+            <Button className="btn btn-light btn-large addCart" onClick={addToCart}>Add to Cart</Button>
             <div className="body">
                 <span className="name">{name}</span>
                 <span className="price">{price}$</span>
