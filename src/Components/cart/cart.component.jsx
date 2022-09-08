@@ -7,8 +7,10 @@ import "./cart.style.scss";
 const Cart = () => {
 
     const {cartItems} = useContext( CartContext );
-
-    const count = cartItems.length;
+    var count = 0;
+    cartItems.forEach(row => {
+        count += row.quantity;
+    });
 
     return (
         <Fragment>

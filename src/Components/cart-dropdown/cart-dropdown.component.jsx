@@ -10,8 +10,9 @@ const CartDropDown = () => {
     return (
         <div className="cart-dropdown">
             <div className="cart-dropdown-body">
-                {cartItems.map(({ id, price, name, imageUrl, quantity }) => (
-                    <div key={id} className="cart-dropdown-row"> <img width="50" height="50" src={imageUrl} alt="product" /> {name} x {quantity}  </div>
+                {cartItems.length == 0 ? <div>Cart is empty</div> : "" }
+                {cartItems.map(({ id,price,  name, imageUrl, quantity }) => (
+                    <div key={id} className="cart-dropdown-row"> <img width="50" height="50" src={imageUrl} alt="product" /> <div><div>{name}</div><div>{quantity} x {price}$</div></div> </div>
                 ))}
 
             </div>
