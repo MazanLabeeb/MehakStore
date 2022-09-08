@@ -15,11 +15,19 @@
         border-radius: 2px;
     }
     .remove{
-        color: red;
+        color: $danger;
         cursor: pointer;
         font-size: 22px;
         &:hover{
             color: $danger;
+        }
+    }
+
+    .increment, .decrement{
+        color: $primary;
+        cursor: pointer;
+        &:hover{
+            color: $primaryDark;
         }
     }
 }

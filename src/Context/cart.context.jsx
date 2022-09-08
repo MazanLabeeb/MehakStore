@@ -33,8 +33,22 @@ export const CartProvider = ({children}) => {
 
     }
 
+    const incrementItemFromCart = (id) => {
+        setCartItems(cartItems.map( cartItem => {
+            if(cartItem.id == id)cartItem.quantity += 1;
+            return cartItem;
+        } ));
+    }
+
+    const decrementItemFromCart = (id) => {
+        setCartItems(cartItems.filter( cartItem => {
+            if(cartItem.id == id) cartItem.quantity -= 1;
+            if(cartItem.quantity > 0)return cartItem;
+        } ));
+    }
+
     
-    const value = {cartItems , setCartItems, addItemsToCart,removeItemFromCart};
+    const value = {cartItems , setCartItems, addItemsToCart,removeItemFromCart, incrementItemFromCart, decrementItemFromCart};
 
    
 

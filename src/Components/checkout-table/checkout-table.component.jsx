@@ -3,10 +3,10 @@ import { CartContext } from "../../Context/cart.context";
 import "./checkout-table.style.scss";
 
 const CheckoutTable = () => {
-    const { cartItems, removeItemFromCart } = useContext(CartContext);
-    const totalPrice = cartItems.reduce((total, cartItem)=>{
-        return total + cartItem.quantity*cartItem.price;
-    },0);
+    const { cartItems, removeItemFromCart,incrementItemFromCart , decrementItemFromCart} = useContext(CartContext);
+    const totalPrice = cartItems.reduce((total, cartItem) => {
+        return total + cartItem.quantity * cartItem.price;
+    }, 0);
 
 
     return (
@@ -29,9 +29,13 @@ const CheckoutTable = () => {
                                 <tr key={id}>
                                     <td><img src={imageUrl} width="50" height="50" alt="Product" /></td>
                                     <td>{name}</td>
-                                    <td>{quantity}</td>
+                                    <td>
+                                        <i className="fa fa-chevron-left increment" aria-hidden="true" onClick={() => { decrementItemFromCart(id) }} ></i>
+                                        &nbsp;{quantity}&nbsp;
+                                        <i className="fa fa-chevron-right decrement" aria-hidden="true" onClick={() => { incrementItemFromCart(id) }} ></i>
+                                    </td>
                                     <td>{price}</td>
-                                    <td><i className="fa fa-times remove" aria-hidden="true" onClick={()=>{removeItemFromCart(id)}} ></i></td>
+                                    <td><i className="fa fa-times remove" aria-hidden="true" onClick={() => { removeItemFromCart(id) }} ></i></td>
                                 </tr>
                             )
                         })
@@ -40,7 +44,7 @@ const CheckoutTable = () => {
                 </tbody>
             </table>
             <div className="null-cart">
-            {(cartItems.length === 0) ? "You have not added any item to cart yet." : ""}
+                {(cartItems.length === 0) ? "You have not added any item to cart yet." : ""}
 
             </div>
             <div className="total">
