@@ -16,7 +16,6 @@ const AllProducts = () => {
         [categoriesMap, AllProducts]
     )
 
-
     return (
         <>
             <div className="categories-container">
