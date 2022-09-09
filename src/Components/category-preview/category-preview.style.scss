@@ -1,0 +1,16 @@
+@import "../../globals";
+
+.categorie-title-container {
+    text-align: center;
+
+    .categorie-title-link {
+        text-decoration: none;
+        font-size: 32px;
+        font-weight: bold;
+        color: $primary;
+
+        &:hover {
+            color: $secondary;
+        }
+    }
+}

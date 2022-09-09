@@ -8,7 +8,7 @@ import CategoryPreview from "../category-preview/category-preview.component";
 const ShopIndex = () => {
     const { categoriesMap } = useContext(CategoriesContext);
     return (
-        <div className="body-max-width">
+        <div className="">
             {
                 categoriesMap && Object.keys(categoriesMap).map((title, index) => {
                     return (

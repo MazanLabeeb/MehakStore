@@ -1,0 +1,12 @@
+@import "../../globals";
+
+.categorie-title-container {
+    text-align: center;
+
+    .categorie-title {
+        font-size: 32px;
+        font-weight: bold;
+        color: $secondary;
+        cursor: default;
+    }
+}
