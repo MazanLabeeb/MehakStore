@@ -10,7 +10,7 @@ const ShopIndex = () => {
     return (
         <div className="body-max-width">
             {
-                Object.keys(categoriesMap).map((title, index) => {
+                categoriesMap && Object.keys(categoriesMap).map((title, index) => {
                     return (
                         <CategoryPreview key={index} title={title} categoriesMap={categoriesMap}   />
                     )
