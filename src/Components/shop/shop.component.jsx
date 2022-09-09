@@ -8,11 +8,11 @@ import { CategoriesContext } from "../../Context/categories.context";
 const Shop = () => {
     const { categoriesMap } = useContext(CategoriesContext);
     return (
-        <Fragment>
+        <div className="body-max-width">
             {
-                Object.keys(categoriesMap).map(title => {
+                Object.keys(categoriesMap).map((title, index) => {
                     return (
-                        <Fragment>
+                        <Fragment key={index}>
                             <h1>
                                 {title}
                             </h1>
@@ -31,7 +31,7 @@ const Shop = () => {
             }
 
 
-        </Fragment>
+        </div>
     );
 
 }
