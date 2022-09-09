@@ -6,7 +6,7 @@ import CategoryPreview from "../category-preview/category-preview.component";
 
 
 
-const Shop = () => {
+const ShopIndex = () => {
     const { categoriesMap } = useContext(CategoriesContext);
     return (
         <div className="body-max-width">
@@ -19,11 +19,9 @@ const Shop = () => {
                 }
                 )
             }
-
-
         </div>
     );
 
 }
 
-export default Shop;
+export default ShopIndex;
