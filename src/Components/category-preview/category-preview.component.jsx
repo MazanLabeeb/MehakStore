@@ -18,6 +18,5 @@ const CategoryPreview = ({title, categoriesMap}) => {
             </div>
         </Fragment>
     )
-
 }
 export default CategoryPreview;
