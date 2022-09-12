@@ -1,4 +1,5 @@
 import { Fragment, useContext } from "react";
+import { useSelector } from "react-redux";
 import { Link, Outlet } from "react-router-dom";
 import CartDropDown from "../../Components/cart-dropdown/cart-dropdown.component";
 import Cart from "../../Components/cart/cart.component";
@@ -8,9 +9,8 @@ import "./nav.style.scss";
 
 
 const Navigation = () => {
-    const { currentUser } = useContext(UserContext);
-
-    
+    // const { currentUser } = useContext(UserContext);
+    const currentUser = useSelector((state)=>state);
 
     return (
         <Fragment>
