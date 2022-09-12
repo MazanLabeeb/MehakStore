@@ -1,9 +1,7 @@
 import { Fragment, useContext } from "react";
 import { useSelector } from "react-redux";
 import { Link, Outlet } from "react-router-dom";
-import CartDropDown from "../../Components/cart-dropdown/cart-dropdown.component";
 import Cart from "../../Components/cart/cart.component";
-import { UserContext } from "../../Context/user.context";
 import { currentUserSelector } from "../../store/user/user.selector";
 import { signOutUser } from "../../utils/firebase/firebase.utils";
 import "./nav.style.scss";
