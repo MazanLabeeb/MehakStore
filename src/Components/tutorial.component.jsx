@@ -1,27 +1,27 @@
 import { useReducer } from "react";
 
-const reducer = (oldState, action) => {
+const reducer = (previousState, action) => {
     const { type } = action;
     switch (type) {
-        case 'INCREMENT':
-            return oldState + 1;
-        case 'DECREMENT':
-            return oldState - 1;
+        case "DECREMENT":
+            return previousState - 1;
             break;
-
+        case "INCREMENT":
+            return previousState + 1;
+            break;
         default:
-            throw new Error("Invalid Type pass to the reducer function");
+            throw new Error("Unkown type has been parsed to the reducer function");
     }
 }
 
 const Tutorial = () => {
-    const [currentState, dispatch] = useReducer(reducer, 0);
-    console.log(currentState);
+    const [state, dispatch] = useReducer(reducer, 0);
+    console.log(state);
 
     return (
         <div>
-            <button onClick={() => { dispatch({ type: "INCREMENT" }) }}>Click Me</button>
-            <button onClick={() => { dispatch({ type: "DECREMENT" }) }}>Click Me</button>
+            <button onClick={() => { dispatch({ type: "DECREMENT" }) }}>DECREMENT</button>
+            <button onClick={() => { dispatch({ type: "INCREMENT" }) }}>INCREMENT</button>
         </div>
     )
 }
