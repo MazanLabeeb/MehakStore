@@ -26,19 +26,19 @@ const cartReducer = (currentState = [], action = {}) => {
         case "ADD_ITEMS_TO_CART":
             return payload
             break;
+            
         case "REMOVE_ITEMS_FROM_CART":
-            return payload.filter(cartItem => cartItem.id != id)
+            return currentState.filter(cartItem => cartItem.id != id)
             break;
 
         case "INCREMENT_ITEM_FROM_CART":
-            console.log("HEllo");
-            return payload.map(cartItem => {
+            return currentState.map(cartItem => {
                 if (cartItem.id == id) cartItem.quantity += 1;
                 return cartItem;
             })
             break;
         case "DECREMENT_ITEM_FROM_CART":
-            return payload.filter(cartItem => {
+            return currentState.filter(cartItem => {
                 if (cartItem.id == id) cartItem.quantity -= 1;
                 if (cartItem.quantity > 0) return cartItem;
             })
@@ -59,18 +59,18 @@ export const CartProvider = ({ children }) => {
     }
 
     const removeItemFromCart = (id) => {
-        dispatch({ type: "REMOVE_ITEMS_FROM_CART", payload: cartItems, id });
+        dispatch({ type: "REMOVE_ITEMS_FROM_CART", id });
     }
 
     const incrementItemFromCart = (id) => {
         dispatch({
-            type: "INCREMENT_ITEM_FROM_CART", payload: cartItems, id
+            type: "INCREMENT_ITEM_FROM_CART", id
         });
     }
 
     const decrementItemFromCart = (id) => {
         dispatch({
-            type: "DECREMENT_ITEM_FROM_CART", payload: cartItems, id
+            type: "DECREMENT_ITEM_FROM_CART",  id
         });
     }
 
