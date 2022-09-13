@@ -34,7 +34,7 @@ const CheckoutTable = () => {
                                         &nbsp;{quantity}&nbsp;
                                         <i className="fa fa-chevron-right decrement" aria-hidden="true" onClick={() => { incrementItemFromCart(id) }} ></i>
                                     </td>
-                                    <td>{price}</td>
+                                    <td>{price}$</td>
                                     <td><i className="fa fa-times remove" aria-hidden="true" onClick={() => { removeItemFromCart(id) }} ></i></td>
                                 </tr>
                             )
