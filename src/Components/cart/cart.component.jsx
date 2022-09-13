@@ -9,8 +9,6 @@ const Cart = () => {
     
     const cartItems = useSelector(state => state.cart);
 
-    
-
     let count = cartItems.reduce((total, item) => {
         return total + item.quantity;
     }, 0);
