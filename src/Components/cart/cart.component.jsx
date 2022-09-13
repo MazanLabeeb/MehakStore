@@ -5,8 +5,10 @@ import CartDropDown from "../cart-dropdown/cart-dropdown.component";
 import "./cart.style.scss";
 
 const Cart = () => {
-    //  optimal way to count items in an array
     const { cartItems } = useContext(CartContext);
+
+    
+
     let count = cartItems.reduce((total, item) => {
         return total + item.quantity;
     }, 0);
