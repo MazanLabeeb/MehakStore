@@ -1,11 +1,13 @@
 
-import { Fragment, useContext, useEffect } from "react";
+import { Fragment, useContext } from "react";
+import { useSelector } from "react-redux";
 import { CartContext } from "../../Context/cart.context";
 import CartDropDown from "../cart-dropdown/cart-dropdown.component";
 import "./cart.style.scss";
 
 const Cart = () => {
-    const { cartItems } = useContext(CartContext);
+    
+    const cartItems = useSelector(state => state.cart);
 
     
 
