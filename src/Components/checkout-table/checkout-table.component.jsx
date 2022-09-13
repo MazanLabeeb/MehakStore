@@ -1,9 +1,28 @@
 import { useContext } from "react";
-import { CartContext } from "../../Context/cart.context";
+import { useSelector, useDispatch } from "react-redux";
+import { cartSelector } from "../../store/cart/cart.selector";
 import "./checkout-table.style.scss";
 
 const CheckoutTable = () => {
-    const { cartItems, removeItemFromCart,incrementItemFromCart , decrementItemFromCart} = useContext(CartContext);
+    const dispatch = useDispatch();
+
+    const removeItemFromCart = (id) => {
+        dispatch({ type: "REMOVE_ITEMS_FROM_CART", id });
+    }
+o
+    const incrementItemFromCart = (id) => {
+        dispatch({
+            type: "INCREMENT_ITEM_FROM_CART", id
+        });
+    }
+
+    const decrementItemFromCart = (id) => {
+        dispatch({
+            type: "DECREMENT_ITEM_FROM_CART",  id
+        });
+    }
+
+    const cartItems = useSelector(cartSelector);
     const totalPrice = cartItems.reduce((total, cartItem) => {
         return total + cartItem.quantity * cartItem.price;
     }, 0);
