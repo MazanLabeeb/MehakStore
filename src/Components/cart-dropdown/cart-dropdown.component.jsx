@@ -1,12 +1,13 @@
 import "./cart-dropdown.style.scss";
 import Button from "../button/button.component";
-import { useContext } from "react";
-import { CartContext } from "../../Context/cart.context";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { cartSelector } from "../../store/cart/cart.selector";
 
 const CartDropDown = () => {
 
-    const { cartItems  } = useContext(CartContext);
+
+    const cartItems = useSelector(cartSelector);
 
     const hideCartDropDown = () => {
         document.getElementById("toggle-cart-dropdown").checked = false;

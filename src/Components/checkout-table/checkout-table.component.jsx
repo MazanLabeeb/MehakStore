@@ -1,4 +1,3 @@
-import { useContext } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { cartSelector } from "../../store/cart/cart.selector";
 import "./checkout-table.style.scss";
@@ -9,7 +8,7 @@ const CheckoutTable = () => {
     const removeItemFromCart = (id) => {
         dispatch({ type: "REMOVE_ITEMS_FROM_CART", id });
     }
-o
+
     const incrementItemFromCart = (id) => {
         dispatch({
             type: "INCREMENT_ITEM_FROM_CART", id

@@ -1,13 +1,13 @@
 
-import { Fragment, useContext } from "react";
+import { Fragment } from "react";
 import { useSelector } from "react-redux";
-import { CartContext } from "../../Context/cart.context";
+import { cartSelector } from "../../store/cart/cart.selector";
 import CartDropDown from "../cart-dropdown/cart-dropdown.component";
 import "./cart.style.scss";
 
 const Cart = () => {
     
-    const cartItems = useSelector(state => state.cart);
+    const cartItems = useSelector(cartSelector);
 
     let count = cartItems.reduce((total, item) => {
         return total + item.quantity;
