@@ -17,8 +17,8 @@ const CategoryItem = ({ category }) => {
             </div>
 
             <div className="category-container-body">
-                <h2>{title}</h2>
-                <p>Shop Now</p>
+                <h2 className="text-gradient">{title}</h2>
+                <p className="text-gradient">Shop Now</p>
             </div>
         </div>
     );

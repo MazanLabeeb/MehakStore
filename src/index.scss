@@ -21,9 +21,20 @@ img {
 
   user-select: none;
 }
+::selection {
+  color: white;
+  background: $danger;
+}
 
 .body-max-width{
   margin: 0 auto;
   max-width: 1000px;
   padding: 16px;
+}
+.text-gradient{
+  user-select: none;
+  color: red;
+  background: linear-gradient(to top left, red, blue) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent;
 }

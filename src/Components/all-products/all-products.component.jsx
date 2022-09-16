@@ -22,7 +22,7 @@ const AllProducts = () => {
     return (
         <>
             <div className="categorie-title-container">
-                <span className="categorie-title">{categoryName.toUpperCase()}</span>
+                <span className="categorie-title text-gradient">{categoryName.toUpperCase()}</span>
             </div>
             <div className="categories-container">
 
