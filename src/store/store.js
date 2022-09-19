@@ -5,8 +5,10 @@ import storage from "redux-persist/lib/storage";
 import persistReducer from "redux-persist/es/persistReducer";
 import persistStore from "redux-persist/es/persistStore";
 
-const middlewares = [logger];
-const composedEnhancer = compose(applyMiddleware(...middlewares));
+const middlewares = [process.env.NODE_ENV !== 'production' && logger].filter(Boolean);
+
+const ChromeDevTools = (process.env.NODE_ENV !== 'production' && window && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) || compose;
+const composedEnhancer = ChromeDevTools(applyMiddleware(...middlewares));
 
 const persistConfig = {
     key:"root",
