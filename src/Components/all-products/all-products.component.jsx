@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { categoriesMapSelector } from "../../store/categories/categories.selector";
 import ProductCard from "../product-card/product-card.component";
+import { Spinner } from "../spinner/spinner.component";
 import "./all-products.style.scss";
 
 const AllProducts = () => {
@@ -24,6 +25,8 @@ const AllProducts = () => {
             <div className="categorie-title-container">
                 <span className="categorie-title text-gradient">{categoryName.toUpperCase()}</span>
             </div>
+            {(!categoriesMap)?<Spinner />:""}
+
             <div className="categories-container">
 
                 {

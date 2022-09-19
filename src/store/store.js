@@ -13,7 +13,7 @@ const composedEnhancer = ChromeDevTools(applyMiddleware(...middlewares));
 const persistConfig = {
     key:"root",
     storage,
-    blacklist: ["user"]
+    blacklist: ["user", "categories"]
 }
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 export const store = createStore(persistedReducer, undefined, undefined);  
