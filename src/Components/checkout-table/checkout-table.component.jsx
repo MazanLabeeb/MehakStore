@@ -1,5 +1,6 @@
 import { useSelector, useDispatch } from "react-redux";
 import { cartSelector } from "../../store/cart/cart.selector";
+import PaymentForm from "../payment-form/payment-form.component";
 import "./checkout-table.style.scss";
 
 const CheckoutTable = () => {
@@ -68,6 +69,8 @@ const CheckoutTable = () => {
             <div className="total">
                 TOTAL: {totalPrice}$
             </div>
+
+            <PaymentForm />
 
         </div>
 
