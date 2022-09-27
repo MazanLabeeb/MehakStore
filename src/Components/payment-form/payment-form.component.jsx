@@ -1,10 +1,23 @@
-
+import { useState } from "react";
 import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
 import Button from "../button/button.component";
+import { useSelector } from "react-redux";
+import { cartSelector } from "../../store/cart/cart.selector";
+import { currentUserSelector } from "../../store/user/user.selector";
+
+
+
 
 const PaymentForm = () => {
     const stripe = useStripe();
     const elements = useElements();
+
+    const cartItems = useSelector(cartSelector);
+    const totalPrice = cartItems.reduce((total, cartItem) => {
+        return total + cartItem.quantity * cartItem.price;
+    }, 0);
+
+    const user = useSelector(currentUserSelector).displayName;
 
     const paymentHandler = async (e) => {
         e.preventDefault();
@@ -15,17 +28,16 @@ const PaymentForm = () => {
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({ amount: 10000 }),
+            body: JSON.stringify({ amount: totalPrice*100 }),
         }).then(res => res.json());
 
         const { paymentIntent: { client_secret } } = response;
-        // console.log(client_secret);
 
         const paymentResult = await stripe.confirmCardPayment(client_secret, {
             payment_method: {
                 card: elements.getElement(CardElement),
                 billing_details: {
-                    name: 'Mazan Labeeb'
+                    name: user?user:"Guest"
                 }
             }
         });
