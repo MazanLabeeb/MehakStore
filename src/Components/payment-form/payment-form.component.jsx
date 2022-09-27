@@ -11,13 +11,18 @@ const PaymentForm = () => {
 
         if (!stripe || !elements) { return; }
         const response = await fetch('/.netlify/functions/create-payment-intent', {
+            method: 'post',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ amount: 10000 }),
         }).then(res => res.json());
 
-        const {paymentIntent:{client_secret}} = response;
-        console.log(client_secret);
+        const { paymentIntent: { client_secret } } = response;
+        // console.log(client_secret);
 
         const paymentResult = await stripe.confirmCardPayment(client_secret, {
-            payment_method:{
+            payment_method: {
                 card: elements.getElement(CardElement),
                 billing_details: {
                     name: 'Mazan Labeeb'
@@ -25,11 +30,20 @@ const PaymentForm = () => {
             }
         });
 
-        if(paymentResult.error){
-            alert(paymentResult.error);
+        if (paymentResult.error) {
+            if (paymentResult.error.code === "card_declined") {
+                alert("Payment was not successful! Card declined");
+                console.log(paymentResult.error);
 
-        }else{
-            if(paymentResult.paymentIntent.status === "succeeded"){
+            } else {
+                alert("Payment was not successful due to an unknown error!");
+                console.log(paymentResult.error);
+
+            }
+
+
+        } else {
+            if (paymentResult.paymentIntent.status === "succeeded") {
                 alert("payment successful");
             }
         }
@@ -45,7 +59,7 @@ const PaymentForm = () => {
             <CardElement>
                 {/* <Button className={"btn btn-primary"}>Pay Now</Button> */}
             </CardElement>
-                <button>Pay Now</button>
+            <button>Pay Now</button>
         </div>
     );
 }
