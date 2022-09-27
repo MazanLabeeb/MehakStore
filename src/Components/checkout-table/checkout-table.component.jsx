@@ -70,6 +70,9 @@ const CheckoutTable = () => {
                 TOTAL: {totalPrice}$
             </div>
 
+            <h2>Credit Card Payment</h2>
+            <br />
+
             <PaymentForm />
 
         </div>
