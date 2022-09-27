@@ -19,7 +19,7 @@ const PaymentForm = () => {
         return total + cartItem.quantity * cartItem.price;
     }, 0);
 
-    const user = useSelector(currentUserSelector).displayName;
+    const user = useSelector(currentUserSelector);
 
     const paymentHandler = async (e) => {
         e.preventDefault();
@@ -40,7 +40,7 @@ const PaymentForm = () => {
             payment_method: {
                 card: elements.getElement(CardElement),
                 billing_details: {
-                    name: user?user:"Guest"
+                    name: user.displayName?user.displayName:"Guest"
                 }
             }
         });
