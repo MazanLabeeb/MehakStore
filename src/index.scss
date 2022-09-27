@@ -35,6 +35,12 @@ img {
   user-select: none;
   color: red;
   background: linear-gradient(to top left, red, blue) !important;
+  background-clip: text !important;
   -webkit-background-clip: text !important;
   -webkit-text-fill-color: transparent;
+}
+
+.text-align-right{
+  float: right;
+  text-align: right;
 }

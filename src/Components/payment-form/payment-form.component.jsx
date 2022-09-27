@@ -33,13 +33,12 @@ const PaymentForm = () => {
         if (paymentResult.error) {
             if (paymentResult.error.code === "card_declined") {
                 alert("Payment was not successful! Card declined");
-                console.log(paymentResult.error);
-
+            }else if(paymentResult.error.code === "incomplete_zip"){
+                alert("Payment was not successful! Please enter the ZIP code.");
             } else {
                 alert("Payment was not successful due to an unknown error!");
-                console.log(paymentResult.error);
-
             }
+            console.log(paymentResult.error);
 
 
         } else {
@@ -57,9 +56,12 @@ const PaymentForm = () => {
     return (
         <div onClick={paymentHandler}>
             <CardElement>
-                {/* <Button className={"btn btn-primary"}>Pay Now</Button> */}
             </CardElement>
-            <button>Pay Now</button>
+            <br />
+            <Button className={"btn btn-primary text-align-right"}>Pay Now</Button>
+            <br />
+            <br />
+
         </div>
     );
 }
