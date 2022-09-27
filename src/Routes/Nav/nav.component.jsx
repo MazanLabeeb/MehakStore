@@ -2,6 +2,7 @@ import { Fragment, useContext } from "react";
 import { useSelector } from "react-redux";
 import { Link, Outlet } from "react-router-dom";
 import Cart from "../../Components/cart/cart.component";
+import { Footer } from "../../Components/footer/footer.component";
 import { currentUserSelector } from "../../store/user/user.selector";
 import { signOutUser } from "../../utils/firebase/firebase.utils";
 import "./nav.style.scss";
@@ -36,6 +37,8 @@ const Navigation = () => {
                 </nav>
             </header>
             <Outlet />
+            <Footer />
+            
         </Fragment>
     );
 }
