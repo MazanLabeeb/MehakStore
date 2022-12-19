@@ -56,7 +56,7 @@ const PaymentForm = () => {
             } else {
                 alert("Payment was not successful due to an unknown error!");
             }
-            console.log(paymentResult.error);
+            console.log("Debug",paymentResult.error);
 
 
         } else {
