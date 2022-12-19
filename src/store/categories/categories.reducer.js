@@ -1,4 +1,4 @@
-import { USER_ACTION_TYPES } from "./categories.type";
+import { USER_ACTION_TYPES } from "./categories.type.ts";
 
 export const categoriesReducer = (oldState = null, action = {}) => {
     const { type, payload } = action;
